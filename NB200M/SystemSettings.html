@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=2.0,user-scalable=yes"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="css/Common.css">
+</head>
+<body>
+<div class="page-container">
+    <div class="menuDiv">
+        <h3>Version Information</h3>
+        <div class="center">
+            <table>
+                <tr>
+                    <td>
+                        <label for="SoftWare_Version">Software Version:</label>
+                    </td>
+                    <td>
+                        <input type="text" readonly class="SoftWare_Version" id="SoftWare_Version"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="HardWare_Version">Hardware Version:</label></td>
+                    <td>
+                        <input type="text" readonly class="HardWare_Version" id="HardWare_Version"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="FirmWare_Version">Firmware Version:</label></td>
+                    <td>
+                        <input type="text" readonly class="FirmWare_Version" id="FirmWare_Version"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="license">License:</label></td>
+                    <td>
+                        <input type="text" readonly class="license" id="license"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="menuDiv hide">
+        <h3>NetWork</h3>
+        <div class="center">
+            <table>
+                <tr>
+                    <td>
+                        <label for="ipAddress">IP address:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="ipAddress" id="ipAddress">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="netMask">Subnet mask:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="netMask" id="netMask">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="gateway">Default gateway:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="gateway" id="gateway">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="mac">MAC Address:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="mac" id="mac" readonly>
+                    </td>
+                </tr>
+            </table>
+            <input type="button" value="Apply" onclick="setNetwork()" class="mb-5">
+        </div>
+    </div>
+
+    <div class="menuDiv hide">
+        <h3>ChangePassword</h3>
+        <div class="center">
+            <table>
+                <tr>
+                    <td>
+                        <label for="oldPassword">Current Password:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="oldPassword" id="oldPassword" placeholder="Current Password"
+                               maxlength="30">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="newPassword">New Password:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="newPassword" id="newPassword" placeholder="New Password"
+                               maxlength="30">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="confirmPassword">Confirm Password:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
+                               maxlength="30">
+                    </td>
+                </tr>
+            </table>
+            <input type="button" value="Apply" onclick="changePassword()" class="mb-5">
+        </div>
+    </div>
+
+    <div class="menuDiv hide">
+        <h3>Configuration</h3>
+        <div class="center">
+            <table>
+                <tr>
+                    <td>
+                        <label for="importFile">Import Configuration:</label>
+                    </td>
+                    <td class="import" id="importFile">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="export_file">Export Configuration:</label>
+                    </td>
+                    <td colspan="2">
+                        <form id="export_group" action="export_mod_config.cgi" method="get">
+                            <input type="button" id="export_file" onclick="exportFile('export_mod_config.cgi','upload_file_iframe')" value="Export"/>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="menuDiv hide">
+        <h3>License</h3>
+        <div class="center">
+            <table>
+                <tr>
+                    <td>
+                        <label for="importLicense">Import License:</label>
+                    </td>
+                    <td class="licenseImport" id="importLicense">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="export_file">Export License:</label>
+                    </td>
+                    <td colspan="2">
+                        <form id="export_form" action="export_license.cgi" method="get">
+                            <input type="button" id="export_license" onclick="exportFile('export_license.cgi','license_file_iframe')" value="Export"/>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="menuDiv hide">
+        <h3>System Operation</h3>
+        <div class="center">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Reboot" onclick="systemReboot()">
+                        <input type="button" value="Factory" onclick="systemDefault()">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/Common.js"></script>
+<script type="application/javascript" src="js/SystemSettings.js"></script>
+</body>
+</html>

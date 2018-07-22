@@ -1,0 +1,130 @@
+body, html {
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/*header*/
+.header-line {
+    width: 100%;
+    height: 4px;
+    background: #f8981d;
+}
+
+/*content*/
+.content {
+    position: absolute;
+    width: 450px;
+    top:20%;
+    left: 50%;
+    margin-left: -225px;
+    text-align: center;
+}
+
+.content-title {
+    font-size: 2em;
+    color: #747474;
+    font-weight: 800;
+}
+
+.content-form {
+    width: 100%;
+    padding: 17px 0 39px;
+    border: 1px solid #dedede;
+    text-align: center;
+    background: #fff;
+}
+
+.content-form div {
+    margin-top: 19px;
+}
+
+.content-form .user,
+.content-form .password {
+    box-sizing: border-box;
+    width: 80%;
+    padding: 12px 20px;
+    font-size: 0.65em;
+    border: 1px solid #cccbcb;
+    border-radius: 7px;
+    letter-spacing: 1px;
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 500px) {
+    .content-form .user,
+    .content-form .password {
+        box-sizing: border-box;
+        width: 55%;
+        padding: 12px 20px;
+        font-size: 0.65em;
+        border: 1px solid #cccbcb;
+        border-radius: 7px;
+        letter-spacing: 1px;
+    }
+}
+
+
+.content-form input:focus {
+    outline: none;
+    -webkit-box-shadow: 0 0 5px rgb(66, 164, 224);
+    box-shadow: 0 0 5px rgb(66, 164, 224);
+}
+
+.content-form-signup {
+    box-sizing: border-box;
+    width: 80%;
+    padding: 12px 20px;
+    border: 1px solid #cccbcb;
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(94, 94, 94);
+    cursor: pointer;
+}
+
+.content-form-signup:hover {
+    opacity: 0.8;
+}
+
+.content-form-signup:focus {
+    outline: none;
+    border: 1px solid rgb(66, 164, 224);
+}
+
+/*输入框无内容便提示*/
+#remind_1,
+#remind_2 {
+    font-size: 14px;
+    color: #f00;
+    margin:0;
+    text-align: center;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.loading > img {
+    padding-top: 20%;
+}
+
+
+.note {
+    color: red;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 18px;
+}

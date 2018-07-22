@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=2.0,user-scalable=yes"/>
+    <title>NB200M</title>
+    <link rel="stylesheet" type="text/css" href="css/Common.css"/>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="header-menu">
+            <span onclick="toggleNav()">
+                <div class="menu-icon"></div>
+            </span>
+        </div>
+        <div class="DeviveTile">
+            <span style="color: lavender; text-align: center">NB200M</span>
+        </div>
+        <div class="header-logo">
+            <img src="img/headerlogo.png" alt="logo" class="logo"/>
+        </div>
+    </div>
+    <div class="nav_box nav_hide">
+        <ul>
+            <li>
+                <a href="Status.html" target="showplace" style="color:rgb(255, 255, 255);">Status</a>
+            </li>
+            <li>
+                <a href="EncoderSettings.html" target="showplace">Encoder Settings</a>
+            </li>
+            <li>
+                <a href="SystemSettings.html" target="showplace">System Settings</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="iframe-container">
+        <div class="pageInfo">
+            <div class="currentLocationTip">Current location: Status</div>
+            <div class="logout">
+                <img src="img/user.png" class="user">
+                <span class="admin"></span>&nbsp;
+                <input type="button" onclick="Logout()" value="Logout" style="cursor: pointer">
+            </div>
+        </div>
+
+        <div class="bg" onclick="hideNav()"></div>
+        <iframe src="Status.html" name="showplace" scrolling="yes" frameborder="0" border="0" marginwidth="0"
+                marginheight="0"></iframe>
+    </div>
+</div>
+<script type="text/javascript" src="js/Common.js"></script>
+<script type="application/javascript" src="js/index.js"></script>
+</body>
+</html>

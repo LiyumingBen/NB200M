@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=2.0,user-scalable=yes"/>
+    <title>NB200M</title>
+    <link rel="stylesheet" href="css/Common.css">
+</head>
+<body>
+<div class="page-container">
+
+    <div class="menuDiv">
+        <h3>Mode</h3>
+        <div class="center">
+            <table>
+                <tr>
+                    <td>
+                        <label for="mod_mode">Mdulate Mode:</label>
+                    </td>
+                    <td>
+                        <select class="mod_mode" id="mod_mode" onchange="handle_mod_mode_change()">
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="menuDiv hide">
+        <h3>Modulate </h3>
+        <div class="center">
+            <table class="ModulateInfo">
+                <tr>
+                    <td>
+                        <label for="constellation">Constellation:</label>
+                    </td>
+                    <td>
+                        <select class="constellation" id="constellation" onchange="handle_constellation_change()">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="frequency">Frequency(MHZ):</label>
+                    </td>
+                    <td>
+                        <input type="text" class="frequency" id="frequency">
+                    </td>
+                </tr>
+
+                <tr class="DVBC">
+                    <td>
+                        <label for="symbolRate">SymbolRate(KSPS):</label>
+                    </td>
+                    <td>
+                        <input type="text" class="symbolRate" id="symbolRate">
+                    </td>
+                </tr>
+
+                <tr class="DVBT ISDBT DTMB">
+                    <td>
+                        <label for="bandwidth">Bandwidth(MHZ):</label>
+                    </td>
+                    <td>
+                        <input type="text" class="bandwidth" id="bandwidth">
+                    </td>
+                </tr>
+
+                <tr class="DVBT">
+                    <td>
+                        <label for="FEC">FEC:</label>
+                    </td>
+                    <td>
+                        <select class="FEC" id="FEC">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="DVBT">
+                    <td>
+                        <label for="carrier_num">Carrier Number:</label>
+                    </td>
+                    <td>
+                        <select class="carrier_num" id="carrier_num">
+                        </select>
+                    </td>
+
+                </tr>
+
+                <tr class="DVBT ISDBT">
+                    <td>
+                        <label for="guard_interval">Guard Interval:</label>
+                    </td>
+                    <td>
+                        <select class="guard_interval" id="guard_interval">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="ISDBT">
+                    <td>
+                        <label for="fft_mode">FFT Mode:</label>
+                    </td>
+                    <td>
+                        <select class="fft_mode" id="fft_mode">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="ISDBT">
+                    <td>
+                        <label for="code_rate">Code Rate:</label>
+                    </td>
+                    <td>
+                        <select class="code_rate" id="code_rate">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="ISDBT">
+                    <td>
+                        <label for="time_interleave">Time Interleave:</label>
+                    </td>
+                    <td>
+                        <select class="time_interleave" id="time_interleave">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="DTMB">
+                    <td>
+                        <label for="rate">Rate:</label>
+                    </td>
+                    <td>
+                        <select class="rate" id="rate">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="DTMB">
+                    <td>
+                        <label for="sync_frame">Sync Frame:</label>
+                    </td>
+                    <td>
+                        <select class="sync_frame" id="sync_frame" onchange="handle_sync_frame_change()">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="DTMB">
+                    <td>
+                        <label for="pn_phase">PN Phase:</label>
+                    </td>
+                    <td>
+                        <select class="pn_phase" id="pn_phase">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="DTMB">
+                    <td>
+                        <label for="interleave">Inter Leave:</label>
+                    </td>
+                    <td>
+                        <select class="interleave" id="interleave">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="DTMB">
+                    <td>
+                        <label for="carrier">Carrier:</label>
+                    </td>
+                    <td>
+                        <select class="carrier" id="carrier">
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="menuDiv hide">
+        <h3>Input</h3>
+        <div class="center">
+            <table>
+                <tr>
+                    <td>
+                        <label for="MediaInput_video">Video:</label>
+                    </td>
+                    <td>
+                        <select class="MediaInput_video" id="MediaInput_video" disabled>
+                            <option value="0">HDMI</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="MediaInput_audio">Audio:</label>
+                    </td>
+                    <td>
+                        <select class="MediaInput_audio" id="MediaInput_audio" disabled>
+                            <option value="0">HDMI</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="menuDiv hide">
+        <h3>Video</h3>
+        <div class="center">
+            <table>
+                <tr>
+                    <td>
+                        <label for="video_profile">Video Profile Type:</label>
+                    </td>
+                    <td>
+                        <select class="video_profile" id="video_profile" onchange="handle_video_profile_change()">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="profile">
+                    <td>
+                        <label for="videoMinBitrate">Min BitRate(kbps):</label>
+                    </td>
+                    <td>
+                        <input type="text" class="videoMinBitrate" id="videoMinBitrate">
+                    </td>
+                </tr>
+
+                <tr class="profile">
+                    <td>
+                        <label for="videoMaxBitrate">Max BitRate(kbps):</label>
+                    </td>
+                    <td>
+                        <input type="text" class="videoMaxBitrate" id="videoMaxBitrate">
+                    </td>
+                </tr>
+
+                <tr class="profile">
+                    <td>
+                        <label for="latency">Latency(ms):</label>
+                    </td>
+                    <td>
+                        <input type="text" class="latency" id="latency">
+                    </td>
+                </tr>
+
+                <tr class="profile">
+                    <td>
+                        <label for="gop">Gop:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="gop" id="gop">
+                    </td>
+                </tr>
+
+                <tr class="profile">
+                    <td>
+                        <label for="min_quant">Min Quant:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="min_quant" id="min_quant">
+                    </td>
+                </tr>
+
+                <tr class="profile">
+                    <td>
+                        <label for="max_quant">Max Quant:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="max_quant" id="max_quant">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="encodeType">Encode Type:</label>
+                    </td>
+                    <td>
+                        <select class="encodeType" id="encodeType">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="encodeStatus">Encode Status:</label>
+                    </td>
+                    <td>
+                        <select class="encodeStatus" id="encodeStatus">
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="menuDiv hide">
+        <h3>Audio</h3>
+        <div class="center">
+            <table>
+                <tr>
+                    <td>
+                        <label for="audioEncodeType">Audio Type:</label>
+                    </td>
+                    <td>
+                        <select class="audioEncodeType" id="audioEncodeType">
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="menuDiv hide">
+        <h3>Stream</h3>
+        <div class="center">
+            <table>
+                <tr>
+                    <td>
+                        <label for="provider">Provider:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="provider" id="provider" maxlength="15">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="service_name">Service Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="service_name" id="service_name" maxlength="15">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="pmt_pid">PMT PID:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="pmt_pid" id="pmt_pid">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="video_pid">Video PID:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="video_pid" id="video_pid">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="network_id">Network ID:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="network_id" id="network_id">
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="audio_pid">Audio PID:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="audio_pid" id="audio_pid">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="service_id">Service ID:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="service_id" id="service_id">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="center">
+        <input type="button" value="Apply" onclick="setModulateInfo()" class="mb-5">
+    </div>
+
+</div>
+<script src="js/Common.js"></script>
+<script src="js/EncoderSettings.js"></script>
+</body>
+</html>
